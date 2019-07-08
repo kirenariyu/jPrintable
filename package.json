@@ -1,0 +1,25 @@
+{
+  "name": "payslip-responsive-print",
+  "version": "1.0.0",
+  "description": "This is an example of a simple payslip where you can print it depending on size paper.",
+  "main": "main.js",
+  "scripts": {
+    "less": "lessc css/style.less css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReiAyame/Payslip-Responsive-Print.git"
+  },
+  "author": "Yumi Takuma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReiAyame/Payslip-Responsive-Print/issues"
+  },
+  "homepage": "https://github.com/ReiAyame/Payslip-Responsive-Print#readme",
+  "devDependencies": {
+    "font-awesome": "^4.7.0",
+    "foundation-sites": "^6.5.3",
+    "jquery": "^3.4.1",
+    "less": "^3.9.0"
+  }
+}
