@@ -1,1 +1,48 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import '../node_modules/foundation-sites/dist/css/foundation.min.css';
+@import '../node_modules/font-awesome/less/font-awesome.less';
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway&display=swap');
+
+/* Color Theme Swatches in Hex */
+@mauve-taupe: #8C6169;
+@chantilly: #403036;
+@black: #1F1F26;
+@white: #F2F2F2;
+@gray: #BFBFBF;
+
+body {
+    background-color: @white;
+    color: @black;
+    font-family: 'Raleway', sans-serif;
+    font-size: calc(0.5em + 1vw);
+    font-weight: 500;
+
+    .top-bar {
+        background-color: @gray;
+        .top-bar-left {
+            .author {
+                font-family: 'Quicksand', sans-serif;
+                font-weight: 700;
+                li a span {
+                    border-top: 1px solid ;
+                    font-size: 1.4em;
+                }
+            }
+        }
+        .menu {
+            background-color: inherit;
+            a {
+                color: @black;
+                padding: 0.5em 1em;
+            }
+        }
+    }
+
+    .title {
+        background-color: @mauve-taupe;
+        color: @white;
+        font-family: 'Parisienne', cursive;
+        font-size: 3.5em;
+        padding: 70px 0;
+        text-align: center;
+    }
+}

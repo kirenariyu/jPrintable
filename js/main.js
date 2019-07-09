@@ -1,12 +1,12 @@
-/***************************************************************
+/************************************************
  * 
- * Copyright (C) Yumi Takuma - All Rights Reserved
- * Unauthorized copying of this file, via any medium is strictly prohibited
- * Proprietary
- * Written by Yumi Takuma <yumitakuma@gmail.com>, July 2019
+ * Copyright (C) Yumi Takuma
+ * yumitakuma@gmail.com
  * 
- ***************************************************************/
+ * Date: 2019-07-08
+ * 
+ ************************************************/
 
-const $ = require('jquery');
+ const $ = require('jquery');
 
-$('body').html('HI');
+// $('body').html('HI');
