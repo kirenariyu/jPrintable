@@ -1,6 +1,5 @@
-@import '../node_modules/foundation-sites/dist/css/foundation.min.css';
-@import '../node_modules/font-awesome/less/font-awesome.less';
 @import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway&display=swap');
+@import '../node_modules/font-awesome/less/font-awesome.less';
 
 /* Color Theme Swatches in Hex */
 @mauve-taupe: #8C6169;
@@ -8,6 +7,12 @@
 @black: #1F1F26;
 @white: #F2F2F2;
 @gray: #BFBFBF;
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
 
 body {
     background-color: @white;
@@ -18,13 +23,21 @@ body {
 
     .top-bar {
         background-color: @gray;
+        padding: 0;
         .top-bar-left {
             .author {
                 font-family: 'Quicksand', sans-serif;
                 font-weight: 700;
                 li a span {
-                    border-top: 1px solid ;
-                    font-size: 1.4em;
+                    border-top: 1px solid;
+                    font-size: 1em;
+                }
+            }
+        }
+        .top-bar-right {
+            li a {
+                &.active, &:active, &:hover, &:focus {
+                    background-color: darken(@gray, 10%);
                 }
             }
         }
@@ -32,7 +45,8 @@ body {
             background-color: inherit;
             a {
                 color: @black;
-                padding: 0.5em 1em;
+                padding: 1em;
+                transition: 0.3s;
             }
         }
     }

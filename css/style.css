@@ -1,4 +1,3 @@
-@import '../node_modules/foundation-sites/dist/css/foundation.min.css';
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2358,6 +2357,11 @@
   src: local('Raleway'), local('Raleway-Regular'), url(https://fonts.gstatic.com/s/raleway/v13/1Ptug8zYS_SKggPNyC0ISg.ttf) format('truetype');
 }
 /* Color Theme Swatches in Hex */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 body {
   background-color: #F2F2F2;
   color: #1F1F26;
@@ -2367,21 +2371,29 @@ body {
 }
 body .top-bar {
   background-color: #BFBFBF;
+  padding: 0;
 }
 body .top-bar .top-bar-left .author {
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
 }
 body .top-bar .top-bar-left .author li a span {
-  border-top: 1px solid ;
-  font-size: 1.4em;
+  border-top: 1px solid;
+  font-size: 1em;
+}
+body .top-bar .top-bar-right li a.active,
+body .top-bar .top-bar-right li a:active,
+body .top-bar .top-bar-right li a:hover,
+body .top-bar .top-bar-right li a:focus {
+  background-color: #a6a6a6;
 }
 body .top-bar .menu {
   background-color: inherit;
 }
 body .top-bar .menu a {
   color: #1F1F26;
-  padding: 0.5em 1em;
+  padding: 1em;
+  transition: 0.3s;
 }
 body .title {
   background-color: #8C6169;

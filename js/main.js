@@ -7,6 +7,5 @@
  * 
  ************************************************/
 
- const $ = require('jquery');
-
-// $('body').html('HI');
+// const $ = require('jquery');
+// const dt = require('datatables.net')(window, $);
