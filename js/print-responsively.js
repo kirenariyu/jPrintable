@@ -6,6 +6,3 @@
  * Date: 2019-07-08
  * 
  ************************************************/
-
-// const $ = require('jquery');
-// const dt = require('datatables.net')(window, $);

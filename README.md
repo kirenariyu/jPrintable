@@ -1,4 +1,4 @@
-# Responsive Print
+# Print Responsively
 
 This is an example of a simple payslip where you can print the content responsively.
 

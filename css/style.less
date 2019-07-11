@@ -1,62 +1,138 @@
-@import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway&display=swap');
-@import '../node_modules/font-awesome/less/font-awesome.less';
+// @import url('https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway&display=swap');
 
-/* Color Theme Swatches in Hex */
 @mauve-taupe: #8C6169;
 @chantilly: #403036;
 @black: #1F1F26;
 @white: #F2F2F2;
 @gray: #BFBFBF;
 
-.img-responsive {
-    display: block;
-    max-width: 100%;
-    height: auto;
+p {
+    text-align: justify;
+}
+a {
+    transition: 0.3s;
+}
+code {
+    font-size: 0.8em;
+}
+ol, ul {
+    margin: 0 0 1rem 2.5em;
+}
+hr {
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(140,97,105,0), rgba(140,97,105,.75), rgba(140,97,105,0));
+    width: 100%;
 }
 
-body {
-    background-color: @white;
-    color: @black;
-    font-family: 'Raleway', sans-serif;
-    font-size: calc(0.5em + 1vw);
-    font-weight: 500;
-
-    .top-bar {
-        background-color: @gray;
-        padding: 0;
-        .top-bar-left {
-            .author {
-                font-family: 'Quicksand', sans-serif;
-                font-weight: 700;
-                li a span {
-                    border-top: 1px solid;
-                    font-size: 1em;
+html {
+    height: 100%;
+    body {
+        background-color: @white;
+        color: @black;
+        display: flex;
+        flex-direction: column; 
+        font-family: 'Raleway', sans-serif;
+        font-size: calc(0.2em + 1vw);
+        font-weight: 500;
+        height: 100%;
+        .top-bar {
+            background-color: @gray;
+            padding: 0;
+            .top-bar-left {
+                .author {
+                    font-family: 'Quicksand', sans-serif;
+                    font-weight: 700;
+                    li a span {
+                        border-top: 1px solid;
+                        font-size: 1em;
+                    }
+                }
+            }
+            .top-bar-right {
+                li a {
+                    &.active, &:active, &:hover, &:focus {
+                        background-color: darken(@gray, 10%);
+                    }
+                }
+            }
+            .menu {
+                background-color: inherit;
+                a {
+                    color: @black;
+                    padding: 1em;
                 }
             }
         }
-        .top-bar-right {
-            li a {
-                &.active, &:active, &:hover, &:focus {
-                    background-color: darken(@gray, 10%);
+        .title {
+            background-color: @mauve-taupe;
+            color: @white;
+            font-family: 'Parisienne', cursive;
+            font-size: 4em;
+            padding: 0.9em 0;
+            text-align: center;
+        }
+        .body-con {
+            padding: 2em 0;
+            .grid-container {
+                .grid-x {
+                    &.alert {
+                        background-color: lighten(@chantilly, 60%);
+                        border: 2px solid @chantilly;
+                        border-radius: 6px;
+                        padding: 1.5rem 1rem 0.5rem;
+                        .fi-alert {
+                            color: @chantilly;
+                            font-size: 5em;
+                            margin-right: 0.1em;
+                        }
+                    }
+                    &:not(:first-child) {
+                        margin-top: 1em;
+                    }
+                    .cell {
+                        section {
+                            &:not(:last-of-type) {
+                                padding-bottom: 1em;
+                            }
+                            &:not(:first-of-type) {
+                                border-top: 1px solid @mauve-taupe;
+                                padding-top: 1em;
+                            }
+                            table {
+                                font-size: 0.85em;
+                            }
+                        }
+                    }
+                    .large-3 {
+                        background-color: lighten(@gray, 15%);
+                        .vertical.menu {
+                            &:not(.nested) {
+                                padding: 0.5em 0 0.8em;
+                            }
+                            li a {
+                                color: @chantilly;
+                                &.is-active {
+                                    font-weight: 800;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
-        .menu {
-            background-color: inherit;
+        footer {
+            background-color: @chantilly;
+            color: @white;
+            font-size: 0.85em;
+            font-weight: 400;
+            padding: 0.7em 1em;
+            margin-top: auto;
             a {
-                color: @black;
-                padding: 1em;
-                transition: 0.3s;
+                color: @white;
+                &:hover {
+                    color: darken(@white, 20%);
+                }
             }
         }
-    }
-
-    .title {
-        background-color: @mauve-taupe;
-        color: @white;
-        font-family: 'Parisienne', cursive;
-        font-size: 3.5em;
-        padding: 70px 0;
-        text-align: center;
     }
 }

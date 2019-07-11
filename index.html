@@ -7,15 +7,20 @@
 		<meta name="description" content="Print Responsively">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/png" href="img/favicon.ico" />
-		<link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway:400,500,700,800|Roboto&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg==" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="css/foundation-icons.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-		<script type="text/javascript" src="js/foundation.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/print-responsively.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="js/print-responsively.js"></script>
 	</head>
 	<body>
-		<div class="contain-to-grid sticky">
-			<div class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+		<header id="main-nav" class="contain-to-grid data-sticky-container">
+			<div class="top-bar" data-topbar role="navigation" data-sticky data-margin-top="0">
 				<div class="top-bar-left">
 					<ul class="menu author">
 						<li><a href="https://github.com/ReiAyame"><span>rei ayame's</span></a></li>
@@ -27,11 +32,12 @@
 						<li><a href="simple.html">Simple</a></li>
 						<li><a href="fixed-header.html">Fixed Header</a></li>
 						<li><a href="fixed-footer.html">Fixed Footer</a></li>
-						<li><a href="via-modal.html">Via Modal</a></li>
+						<li><a href="payslip.html">Sample Payslip</a></li>
+						<li><a href="help.html">Help</a></li>
 					</ul>
 				</div>
 			</div>
-		</div>
+		</header>
 
 		<div class="contain-to-grid title">
 			<div class="grid-container">
@@ -41,11 +47,179 @@
 
 		<div class="contain-to-grid body-con index-con">
 			<div class="grid-container">
-				<div data-alert class="alert-box secondary">
-					This is a secondary alert.
-					<a href="#" class="close">&times;</a>
+				<div class="alert grid-x grid-x-container">
+					<div class="cell small-2 align-center-middle text-center">
+						<i class="fi-alert"></i>
+					</div>
+					<div class="cell small-10">
+						<p>Please take note that you don't need Foundation and LESS to use this plugin. The design of your web's all yours. You'll be only needing are the following:</p>
+						<ol type="1">
+							<li>jQuery</li>
+							<li><strong>print-responsively.css</strong> for @media print</li>
+							<li><strong>print-responsively.js</strong> for config</li>
+						</ol>
+						<p>The cons for this plugin is when you need to add a fixed header and footer for ever pages of your document. Please see <a href="#cheat-sheet-config">Cheat Sheet (JS)</a> for more information.</p>
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell large-3 columns show-for-medium">
+						<nav id="right-con" data-sticky-container>
+							<div class="sticky" data-sticky data-anchor="left-con" data-margin-top="3">
+								<ul class="vertical menu" data-magellan data-offset="65">
+									<li><a href="#introduction">Introduction</a></li>
+									<li><a href="#getting-started">Getting Started</a></li>
+									<li><a href="#cheat-sheet-css">Cheat Sheet (CSS)</a></li>
+									<li><a href="#cheat-sheet-config">Cheat Sheet (Config)</a></li>
+									<li>
+										<a href="#more-details">More Details</a>
+										<ul class="nested vertical menu">
+											<li><a href="#header">I. header</a></li>
+											<li><a href="#footer">II. footer</a></li>
+											<li><a href="#size">III. size</a></li>
+											<li><a href="#button-container">IV. button-container</a></li>
+											<li><a href="#button-text">V. button-text</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+					<div id="left-con" class="cell large-9 small-12 columns">
+						<section id="introduction" data-magellan-target="introduction">
+							<h2>Introduction</h2>
+							<p>Print Responsively aims to render webpage into paper simply, properly and responsively in every browser; eliminating the default footer and header of user's web browser.</p>
+							<p>Before, there were rules in CSS that we can use for @media print so we could print our desired webpages properly. But, unfortunately, some of them become deprecated. So I made this plugin to help others give other devs and idea or use it (that would be an honor) for their website or web application.</p>
+						</section>
+						<section id="getting-started" data-magellan-target="getting-started">
+							<h2>Getting Started</h2>
+							<p>Print Responsively depends on jQuery. So you must have a jQuery first before calling this plugin to your document.</p>
+							<p>I created a simple website in this repository give you some examples on how this plugin works. But you will be only needing these files to add in your document's head:</p>
+							<ul>
+								<li>css/print-responsively.css</li>
+								<li>js/print-responsively.js</li>
+							</ul>
+							<p>Then add this code to your code:</p>
+							<p><code>$(document).printResponsively();</code></p>
+							<p>Or if there's only a specific content in your document that you want it printed:</p>
+							<p><code>$('#container').printResponsively();</code></p>
+						</section>
+						<section id="cheat-sheet-css" data-magellan-target="cheat-sheet-css">
+							<h2>Cheat Sheet (CSS)</h2>
+							<p>You may add additional rules depending on the set design. Just take note that sometimes float elements can destroy your design.</p>
+							<p>If you encountered some display problem, you also need to look carefully the parent element/s because they can affect the look of your page on print and this can really waste a lot of your time. Your partner-in-crime is inspect console in browsers and try experimenting in styles.</p>
+							<table class="dt-simple">
+								<thead>
+									<tr>
+										<th width="25%">Class</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>.hide-for-print</code></td>
+										<td>This will not include the element in print.</td>
+									</tr>
+									<tr>
+										<td><code>.show-for-print</code></td>
+										<td>Hidden or not, this will include the element in print.</td>
+									</tr>
+									<tr>
+										<td><code>.print-fixed-header</code></td>
+										<td>Depends on <code>.print-fixed-header-container</code>. If config header is set to yes, this sets an element to be the fixed page header.</td>
+									</tr>
+									<tr>
+										<td><code>.print-fixed-header-container</code></td>
+										<td>Placed in the container of</td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section id="cheat-sheet-config" data-magellan-target="cheat-sheet-config">
+							<h2>Cheat Sheet (Config)</h2>
+							<table class="dt-simple">
+								<thead>
+									<tr>
+										<th width="20%">Option</th>
+										<th width="10%">Need Size?</th>
+										<th width="10%">Type</th>
+										<th width="20%">Value</th>
+										<th width="20%">Example</th>
+										<th width="20%">Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><code>header</code></td>
+										<td>Yes</td>
+										<td>boolean</td>
+										<td>true<br>false</td>
+										<td>true</td>
+										<td>This allow you </td>
+									</tr>
+									<tr>
+										<td><code>footer</code></td>
+										<td>Yes</td>
+										<td>boolean</td>
+										<td>true<br>false</td>
+										<td>true</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><code>size</code></td>
+										<td>Yes</td>
+										<td>String</td>
+										<td>Paper size name<br>Paper size in mm</td>
+										<td>'A5'<br>'841x1189'</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><code>button-container</code></td>
+										<td>No</td>
+										<td>String</td>
+										<td>Container's id</td>
+										<td>'container-id'</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td><code>button-text</code></td>
+										<td>No</td>
+										<td>String</td>
+										<td></td>
+										<td>'Print'<br>'Print (' + size ')'</td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</section>
+						<section id="more-details" data-magellan-target="more-details">
+							<h2>More Details</h2>
+							<h3 id="header" data-magellan-target="header">header</h3>
+							<h3 id="footer" data-magellan-target="footer">footer</h3>
+							<h3 id="size" data-magellan-target="size">size</h3>
+							<h3 id="button-container" data-magellan-target="button-container">button-container</h3>
+							<h3 id="button-text" data-magellan-target="button-text">button-text</h3>
+						</section>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<footer>
+			<div class="grid-x-container grid-x fluid">
+				<div class="cell small-4 columns">
+					<span>&copy; 2019 rei ayame</span>
+				</div>
+				<div class="cell small-4 columns text-center">
+					Fork me on GitHub! <a href="https://github.com/ReiAyame"><i class="fi-social-github"></i> ReiAyame</a>
+				</div>
+				<div class="cell small-4 columns text-right">
+					Email me at: <a href="help.html">yumitakuma@outlook.com</a>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			$(document).foundation();
+		</script>
 	</body>
 </html>

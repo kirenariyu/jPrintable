@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Print Responsively</title>
+        <meta name="author" content="Yumi Takuma">
+        <meta name="description" content="Print Responsively">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="img/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Parisienne|Quicksand|Raleway:400,500,700,800|Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" integrity="sha256-xpOKVlYXzQ3P03j397+jWFZLMBXLES3IiryeClgU5og= sha384-gP4DhqyoT9b1vaikoHi9XQ8If7UNLO73JFOOlQV1RATrA7D0O7TjJZifac6NwPps sha512-AKwIib1E+xDeXe0tCgbc9uSvPwVYl6Awj7xl0FoaPFostZHOuDQ1abnDNCYtxL/HWEnVOMrFyf91TDgLPi9pNg==" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/foundation-icons.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/print-responsively.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="js/print-responsively.js"></script>
+    </head>
+	<body>
+		<header id="main-nav" class="contain-to-grid data-sticky-container">
+			<div class="top-bar" data-topbar role="navigation" data-sticky data-margin-top="0">
+				<div class="top-bar-left">
+					<ul class="menu author">
+						<li><a href="https://github.com/ReiAyame"><span>rei ayame's</span></a></li>
+					</ul>
+				</div>
+				<div class="top-bar-right">
+					<ul class="menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="simple.html">Simple</a></li>
+						<li><a href="fixed-header.html">Fixed Header</a></li>
+						<li><a href="fixed-footer.html" class="active">Fixed Footer</a></li>
+						<li><a href="payslip.html">Sample Payslip</a></li>
+						<li><a href="help.html">Help</a></li>
+					</ul>
+				</div>
+			</div>
+        </header>
+        
+		<div class="contain-to-grid body-con simple-con">
+			<div class="grid-container">
+				<div class="grid-x grid-x-container">
+                    <div class="small-12">
+                        
+                    </div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="grid-x-container grid-x fluid">
+				<div class="cell small-4 columns">
+					<span>&copy; 2019 rei ayame</span>
+				</div>
+				<div class="cell small-4 columns text-center">
+					Fork me on GitHub! <a href="https://github.com/ReiAyame"><i class="fi-social-github"></i> ReiAyame</a>
+				</div>
+				<div class="cell small-4 columns text-right">
+					Email me at: <a href="help.html">yumitakuma@outlook.com</a>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			$(document).foundation();
+		</script>
+	</body>
+</html>
