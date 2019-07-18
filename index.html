@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.js"></script>
 		<script type="text/javascript" src="js/print-responsively.js"></script>
 	</head>
 	<body>
@@ -58,11 +59,11 @@
 							<li><strong>print-responsively.css</strong> for @media print</li>
 							<li><strong>print-responsively.js</strong> for config</li>
 						</ol>
-						<p>The cons for this plugin is when you need to add a fixed header and footer for ever pages of your document. Please see <a href="#cheat-sheet-config">Cheat Sheet (JS)</a> for more information.</p>
+						<p>The cons for this plugin is you need to place the size of the paper and will only be responsive for that size of the paper.</p>
 					</div>
 				</div>
 				<div class="grid-x grid-margin-x">
-					<div class="cell large-3 columns show-for-medium">
+					<div class="cell medium-3 columns show-for-medium">
 						<nav id="right-con" data-sticky-container>
 							<div class="sticky" data-sticky data-anchor="left-con" data-margin-top="3">
 								<ul class="vertical menu" data-magellan data-offset="65">
@@ -73,18 +74,18 @@
 									<li>
 										<a href="#more-details">More Details</a>
 										<ul class="nested vertical menu">
-											<li><a href="#header">I. header</a></li>
-											<li><a href="#footer">II. footer</a></li>
-											<li><a href="#size">III. size</a></li>
-											<li><a href="#button-container">IV. button-container</a></li>
-											<li><a href="#button-text">V. button-text</a></li>
+											<li><a href="#header">header</a></li>
+											<li><a href="#footer">footer</a></li>
+											<li><a href="#size">size</a></li>
+											<li><a href="#button-container">button-container</a></li>
+											<li><a href="#button-text">button-text</a></li>
 										</ul>
 									</li>
 								</ul>
 							</div>
 						</nav>
 					</div>
-					<div id="left-con" class="cell large-9 small-12 columns">
+					<div id="left-con" class="cell medium-9 small-12 columns">
 						<section id="introduction" data-magellan-target="introduction">
 							<h2>Introduction</h2>
 							<p>Print Responsively aims to render webpage into paper simply, properly and responsively in every browser; eliminating the default footer and header of user's web browser.</p>
@@ -107,28 +108,28 @@
 							<h2>Cheat Sheet (CSS)</h2>
 							<p>You may add additional rules depending on the set design. Just take note that sometimes float elements can destroy your design.</p>
 							<p>If you encountered some display problem, you also need to look carefully the parent element/s because they can affect the look of your page on print and this can really waste a lot of your time. Your partner-in-crime is inspect console in browsers and try experimenting in styles.</p>
-							<table class="dt-simple">
+							<table class="dt-simple dt-responsive" width="100%">
 								<thead>
 									<tr>
-										<th width="25%">Class</th>
+										<th>Class</th>
 										<th>Description</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td><code>.hide-for-print</code></td>
+										<td><code>.hide-print</code></td>
 										<td>This will not include the element in print.</td>
 									</tr>
 									<tr>
-										<td><code>.show-for-print</code></td>
+										<td><code>.show-print</code></td>
 										<td>Hidden or not, this will include the element in print.</td>
 									</tr>
 									<tr>
-										<td><code>.print-fixed-header</code></td>
-										<td>Depends on <code>.print-fixed-header-container</code>. If config header is set to yes, this sets an element to be the fixed page header.</td>
+										<td><code>.pfh-con</code></td>
+										<td>Placed in the container of</td>
 									</tr>
 									<tr>
-										<td><code>.print-fixed-header-container</code></td>
+										<td><code>.pff-con</code></td>
 										<td>Placed in the container of</td>
 									</tr>
 								</tbody>
@@ -136,56 +137,50 @@
 						</section>
 						<section id="cheat-sheet-config" data-magellan-target="cheat-sheet-config">
 							<h2>Cheat Sheet (Config)</h2>
-							<table class="dt-simple">
+							<table class="dt-simple dt-responsive" width="100%">
 								<thead>
 									<tr>
-										<th width="20%">Option</th>
-										<th width="10%">Need Size?</th>
-										<th width="10%">Type</th>
-										<th width="20%">Value</th>
-										<th width="20%">Example</th>
-										<th width="20%">Description</th>
+										<th>Option</th>
+										<th>Need Size?</th>
+										<th>Value</th>
+										<th>Description</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td><code>header</code></td>
 										<td>Yes</td>
-										<td>boolean</td>
-										<td>true<br>false</td>
-										<td>true</td>
-										<td>This allow you </td>
+										<td>Element's id's or classes</td>
+										<td>See <code>.pfh-con</code>.</td>
 									</tr>
 									<tr>
 										<td><code>footer</code></td>
 										<td>Yes</td>
-										<td>boolean</td>
-										<td>true<br>false</td>
-										<td>true</td>
+										<td>Element's id's or classes</td>
+										<td>See <code>.pff-con</code>.</td>
+									</tr>
+									<tr>
+										<td><code>page-header</code></td>
+										<td>Yes</td>
+										<td>Element's id's or classes where you'll place the page number</td>
 										<td></td>
 									</tr>
 									<tr>
 										<td><code>size</code></td>
 										<td>Yes</td>
-										<td>String</td>
-										<td>Paper size name<br>Paper size in mm</td>
-										<td>'A5'<br>'841x1189'</td>
+										<td>Paper size name or paper size in mm</td>
 										<td></td>
 									</tr>
 									<tr>
 										<td><code>button-container</code></td>
 										<td>No</td>
-										<td>String</td>
 										<td>Container's id</td>
-										<td>'container-id'</td>
 										<td></td>
 									</tr>
 									<tr>
 										<td><code>button-text</code></td>
 										<td>No</td>
-										<td>String</td>
 										<td></td>
-										<td>'Print'<br>'Print (' + size ')'</td>
 										<td></td>
 									</tr>
 								</tbody>
@@ -206,20 +201,30 @@
 
 		<footer>
 			<div class="grid-x-container grid-x fluid">
-				<div class="cell small-4 columns">
-					<span>&copy; 2019 rei ayame</span>
+				<div class="cell large-4 medium-12 columns">
+					<span>&copy; 2019 rei ayame's</span>
 				</div>
-				<div class="cell small-4 columns text-center">
-					Fork me on GitHub! <a href="https://github.com/ReiAyame"><i class="fi-social-github"></i> ReiAyame</a>
+				<div class="cell large-4 medium-12 columns text-center">
+					Fork me on GitHub! <a href="https://github.com/ReiAyame"><u><i class="fi-social-github"></i> ReiAyame</u></a>
 				</div>
-				<div class="cell small-4 columns text-right">
-					Email me at: <a href="help.html">yumitakuma@outlook.com</a>
+				<div class="cell large-4 medium-12 columns text-right">
+					Email me at <a href="mailto:yumitakuma@outlook.com"><u>yumitakuma@outlook.com</u></a> or send <a href="help.html"><u>help</u></a>.
 				</div>
 			</div>
 		</footer>
 
 		<script>
 			$(document).foundation();
+			$(document).ready(function() {
+				$('table').DataTable({
+					autoWidth: true,
+					info: false,
+					ordering: false,
+					paging: false,
+					responsive: true,
+					searching: false
+				});
+			});
 		</script>
 	</body>
 </html>
