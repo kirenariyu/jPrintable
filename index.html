@@ -12,7 +12,6 @@
 		<link rel="stylesheet" type="text/css" href="css/foundation-icons.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/print-responsively.css" />
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js" integrity="sha256-/PFxCnsMh+nTuM0k3VJCRch1gwnCfKjaP8rJNq5SoBg= sha384-9ksAFjQjZnpqt6VtpjMjlp2S0qrGbcwF/rvrLUg2vciMhwc1UJJeAAOLuJ96w+Nj sha512-UMSn6RHqqJeJcIfV1eS2tPKCjzaHkU/KqgAnQ7Nzn0mLicFxaVhm9vq7zG5+0LALt15j1ljlg8Fp9PT1VGNmDw==" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
@@ -53,9 +52,8 @@
 						<i class="fi-alert"></i>
 					</div>
 					<div class="cell small-10">
-						<p>Please take note that you don't need Foundation and LESS to use this plugin. The design of your web's all yours. You'll be only needing are the following:</p>
+						<p>Please take note that you don't need jQuery, Foundation and LESS or DataTables to use this plugin. I only used them here for the design. The design of your web's all yours. You'll be only needing are the following:</p>
 						<ol type="1">
-							<li>jQuery</li>
 							<li><strong>print-responsively.css</strong> for @media print</li>
 							<li><strong>print-responsively.js</strong> for config</li>
 						</ol>
@@ -72,13 +70,13 @@
 									<li><a href="#cheat-sheet-css">Cheat Sheet (CSS)</a></li>
 									<li><a href="#cheat-sheet-config">Cheat Sheet (Config)</a></li>
 									<li>
-										<a href="#more-details">More Details</a>
+										<a href="#config">More Details</a>
 										<ul class="nested vertical menu">
 											<li><a href="#header">header</a></li>
 											<li><a href="#footer">footer</a></li>
 											<li><a href="#size">size</a></li>
-											<li><a href="#button-container">button-container</a></li>
-											<li><a href="#button-text">button-text</a></li>
+											<li><a href="#buttonContainer">buttonContainer</a></li>
+											<li><a href="#buttonText">buttonText</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -88,13 +86,13 @@
 					<div id="left-con" class="cell medium-9 small-12 columns">
 						<section id="introduction" data-magellan-target="introduction">
 							<h2>Introduction</h2>
-							<p>Print Responsively aims to render webpage into paper simply, properly and responsively in every browser; eliminating the default footer and header of user's web browser.</p>
-							<p>Before, there were rules in CSS that we can use for @media print so we could print our desired webpages properly. But, unfortunately, some of them become deprecated. So I made this plugin to help others give other devs and idea or use it (that would be an honor) for their website or web application.</p>
+							<p>Print Responsively aims to render webpage into a specific paper simply, properly and responsively in every browser; eliminating the default footer and header of user's web browser.</p>
+							<p>Before, there were rules in CSS that we can use for @media print so we could print our desired webpages properly. But, unfortunately, some of them were already deprecated. So I made this plugin to help others give idea or use it (that would be an honor) for their website or web application.</p>
 						</section>
 						<section id="getting-started" data-magellan-target="getting-started">
 							<h2>Getting Started</h2>
-							<p>Print Responsively depends on jQuery. So you must have a jQuery first before calling this plugin to your document.</p>
-							<p>I created a simple website in this repository give you some examples on how this plugin works. But you will be only needing these files to add in your document's head:</p>
+							<p>Print Responsively is made purely in JavaScript.</p>
+							<p>I created a simple website in this repository to give you some examples on how this plugin works. But you will be only needing these files to add in your document's head:</p>
 							<ul>
 								<li>css/print-responsively.css</li>
 								<li>js/print-responsively.js</li>
@@ -172,20 +170,59 @@
 										<td></td>
 									</tr>
 									<tr>
-										<td><code>button-text</code></td>
+										<td><code>buttonText</code></td>
 										<td></td>
 										<td></td>
 									</tr>
 								</tbody>
 							</table>
 						</section>
-						<section id="more-details" data-magellan-target="more-details">
-							<h2>More Details</h2>
-							<h3 id="header" data-magellan-target="header">header</h3>
+						<section id="style" data-magellan-target="style">
+							<h2>Styling in @media print</h2>
+							<p>All margin and padding from the body or the selected container will reflect in the print. There are some instances that @media print is so painful to work on for not all styles can be read by browser's print or page setup.</p>
+							<p>You may search from Google or ask for help in StackOverflow regarding some issues of your media print. But some of them have been asked and answered</p>
+						</section>
+						<section id="config" data-magellan-target="config">
+							<h2>Configurations</h2>
+							<h3 id="buttonClass" data-magellan-target="buttonClass">buttonClass</h3>
+							<p>Add other class. The first class is 'print-button'.</p>
+							<h3 id="buttonContainer" data-magellan-target="buttonContainer">buttonContainer</h3>
+							<p>Default: None</p>
+							<p>Add the id container where you'll put the button/s.</p>
+							<p>Add the class containers where you'll put the button/s.</p>
+							<p>Optional. If there's no buttonContainer, then no buttons.</p>
+							<p>If you need to put each buttons to different location, use cloning for now. Will update to add this function.</p>
+							<h3 id="buttonText" data-magellan-target="buttonText">buttonText</h3>
+							<p>Default if there's a buttonContainer: Print</p>
+							<p>If there are multiple sizes, there would be multiple buttons.</p>
+							<p>Prerequisite: buttonContainer</p>
+							<p>If you like to add size in button you can add by &lt;size&gt;.</p>
+							<h3 id="container" data-magellan-target="container">container</h3>
+							<p>Default: Body</p>
+							<p>Add the id containers of the content you want only to print.</p>
+							<p>Add the class containers of the contents you want only to print.</p>
+							<h3 id="cssContainer" data-magellan-target="cssContainer">cssContainer</h3>
+							<p>If there's a css path, the default would be in the body. Else, this will fail.</p>
+							<p>Prerequisite: cssPath</p>
+							<h3 id="cssPath" data-magellan-target="cssPath">cssPath</h3>
+							<p>You can dynamically add the style.</p>
 							<h3 id="footer" data-magellan-target="footer">footer</h3>
+							<p>Default: None</p>
+							<p>Add id.</p>
+							<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
+							<h3 id="header" data-magellan-target="header">header</h3>
+							<p>Default: None</p>
+							<p>Add id.</p>
+							<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
+							<h3 id="margin" data-magellan-target="margin">margin</h3>
+							<p>Default: 0</p>
+							<p>Add margin in any format. Use shorthand margin.</p>
+							<p>top right bottom left</p>
+							<h3 id="orientation" data-magellan-target="orientation">orientation</h3>
 							<h3 id="size" data-magellan-target="size">size</h3>
-							<h3 id="button-container" data-magellan-target="button-container">button-container</h3>
-							<h3 id="button-text" data-magellan-target="button-text">button-text</h3>
+							<p>Default: Letter</p>
+							<p>If there are no sizes in the list, you may add it in mm.</p>
+							<p>If multiple, ','</p>
 						</section>
 					</div>
 				</div>

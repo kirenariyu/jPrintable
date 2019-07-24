@@ -1,10 +1,14 @@
+@page {
+    margin: 0;
+}
+
 @media print {
-    
-    .hide-for-print {
+
+    .hide-on-print {
         display: none;
     }
 
-    .show-print {
+    .show-on-print {
         display: block;
     }
 

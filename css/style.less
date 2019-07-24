@@ -6,6 +6,9 @@
 @white: #F2F2F2;
 @gray: #BFBFBF;
 
+h2 {
+    margin-bottom: 1rem;
+}
 p {
     text-align: justify;
 }
@@ -31,6 +34,7 @@ hr {
 table {
     border: none !important;
     color: @black;
+    margin-bottom: 1rem !important;
     width: 100%;
     thead tr th {
         background-color: lighten(@gray, 15%);
@@ -125,11 +129,11 @@ html {
                 .cell {
                     section {
                         &:not(:last-of-type) {
-                            padding-bottom: 1em;
+                            padding-bottom: 1.5rem;
                         }
                         &:not(:first-of-type) {
                             border-top: 1px solid @mauve-taupe;
-                            padding-top: 1em;
+                            padding-top: 1.5rem;
                         }
                     }
                 }
