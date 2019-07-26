@@ -5,7 +5,7 @@
 @media print {
 
     .hide-on-print {
-        display: none;
+        display: none !important;
     }
 
     .show-on-print {

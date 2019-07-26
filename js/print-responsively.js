@@ -71,24 +71,25 @@ _setContainer = function (container) {
 }
 
 _setCss = function (cssContainer, cssPath) {
-    var stylesheet = document.createElement('link');
-        stylesheet.rel = 'stylesheet';
-        stylesheet.type = 'text/css';
-        stylesheet.href = cssPath;
-        cssContainer = (cssContainer) ? cssContainer : 'head';
+    var link            = document.createElement('link');
+        link.href       = cssPath;
+        link.className  = 'dynamic-stylesheet-1'
+        link.rel        = 'stylesheet';
+        link.type       = 'text/css';
+        cssContainer    = (cssContainer) ? cssContainer : 'head';
 
     if (cssContainer.charAt(0) == '#') {
-        document.querySelector(cssContainer).appendChild(stylesheet);
+        document.querySelector(cssContainer).appendChild(link);
     } else {
         var classElement = document.getElementsByClassName(cssContainer.replace('.', ''));
 
         for (var d = 0; d < classElement.length; d++) {
-            classElement[d].prepend(stylesheet);
+            classElement[d].prepend(link);
         }
     }
 }
 
-_setButton = function (buttonClass, buttonContainer, buttonText, size) {
+_setButton = function (buttonClass, buttonContainer, buttonText, container, margin, orientation, size) {
     var buttons     = document.createElement('div'),
         buttonText  = (buttonText) ? buttonText : 'PRINT';
         buttons.id  = 'print-button-container';
@@ -99,8 +100,9 @@ _setButton = function (buttonClass, buttonContainer, buttonText, size) {
                 button.type         = 'button';
                 button.className    = 'print-button' + ((buttonClass) ? ' ' + buttonClass : '');
                 button.id           = 'print-it-in-' + obj;
-                button.innerHTML    = buttonText + obj;
-
+                button.innerHTML    = buttonText.replace('<size>', obj);
+            
+            button.addEventListener('click', (event) => { _printPage(container, obj, margin, orientation) });
             buttons.appendChild(button);
         });
     } else {
@@ -110,9 +112,10 @@ _setButton = function (buttonClass, buttonContainer, buttonText, size) {
             button.id           = 'print-it-in-' + size;
             button.innerHTML    = (buttonText.includes('<size>')) ? buttonText + ' ' + size : buttonText;
 
+        button.addEventListener('click', (event) => { _printPage(container, obj, margin, orientation) });
         buttons.appendChild(button);
     }
-    
+
     if (buttonContainer.charAt(0) == '#') {
         document.querySelector(buttonContainer).appendChild(buttons);
     } else {
@@ -124,6 +127,39 @@ _setButton = function (buttonClass, buttonContainer, buttonText, size) {
     }
 }
 
+_printPage = function (container, id, margin, orientation) {
+    var links = document.getElementsByClassName('dynamic-stylesheet-1');
+
+    for (var e = 0; e < links.length; e++) {
+        links[e].removeAttribute('disabled');
+    }
+
+    window.onbeforeprint = (event) => {
+        if (document.getElementById('dynamic-stylesheet-2')) {
+            document.getElementById('dynamic-stylesheet-2').remove();
+            console.log('There\'s one.');
+        }
+    
+        // Set @page
+        var stylesheet              = document.createElement('style');
+            stylesheet.rel          = 'stylesheet';
+            stylesheet.type         = 'text/css';
+            stylesheet.id           = 'dynamic-stylesheet';
+            stylesheet.innerHTML    = '@page { size: ' + id  + '; orientation: ' + orientation + '; } @media print { ' + container + ' { padding: ' + margin + ' !important; } }';
+    
+        document.querySelector('head').appendChild(stylesheet);
+    };
+
+    window.print();
+
+    window.onafterprint = (event) => {
+        if (document.getElementById('dynamic-stylesheet-2')) {
+            document.getElementById('dynamic-stylesheet-2').remove();
+            console.log('There\'s one.');
+        }
+    };
+}
+
 _printResponsively = function (param) {
     var buttonClass     = (param.buttonClass) ? param.buttonClass : '',
         buttonContainer = (param.buttonContainer) ? param.buttonContainer : '',
@@ -132,21 +168,21 @@ _printResponsively = function (param) {
         cssPath         = (param.cssPath) ? param.cssPath : '',
         cssContainer    = (param.cssContainer) ? param.cssContainer : '',
         footer          = (param.footer) ? param.footer : '',
-        header          = (param.header) ? param.header : '',
+        header          = (param.header) ? param.header : true,
+        keypress        = (param.keypress) ? param.keypress : '',
+        margin          = (param.margin) ? param.margin : '0',
         orientation     = (param.orientation) ? param.orientation : 'portrait',
-        size            = (param.size) ? param.size : 'LETTER';
+        size            = (param.size) ? param.size : 'letter';
 
     // Add button
     if (!buttonContainer && buttonText) {
         console.log('You must add the id or class of button container/s.');
     } else if (buttonContainer) {
-        _setButton(buttonClass, buttonContainer, buttonText, size);
+        _setButton(buttonClass, buttonContainer, buttonText, container, margin, orientation, size);
     }
 
     // Hide all contents outside the container
-    if (container != 'body') {
-        _setContainer(container);
-    }
+    if (container != 'body') _setContainer(container);
 
     // Dynamically import css and place it in specific area
     if (cssContainer && !cssPath) {
@@ -154,6 +190,17 @@ _printResponsively = function (param) {
     } else if (cssPath) {
         _setCss(cssContainer, cssPath);
     }
+
+    // Listen to keypress
+    window.addEventListener("keydown", (event) => {
+        if ((event.ctrlKey || event.keyCode === 80) && (keypress == false)) {
+            var links = document.getElementsByClassName('dynamic-stylesheet-1');
+
+            for (var z = 0; z < links.length; z++) {
+                links[z].setAttribute('disabled', true);
+            }
+        }
+    });
 
     // Get width and height of the paper
     var width  = 0, height   = 0;
@@ -175,7 +222,7 @@ printResponsively = function (param) {
         return new _printResponsively(param);
     } else {
         return new _printResponsively({
-            size: 'LETTER'
+            size: 'letter'
         });
     }
 };
