@@ -220,12 +220,12 @@ html {
 }
 
 .button {
-    background-color: $mauve-taupe;
-    margin-top: 1rem;
-    transition: 0.3s;
-    width: 100%;
+    background-color: $mauve-taupe !important;
+    margin-top: 1rem !important;
+    transition: 0.3s !important;
+    width: 100% !important;
     &:active, &:hover, &:focus {
-        background-color: darken($mauve-taupe, 10%);
+        background-color: darken($mauve-taupe, 10%) !important;
         outline: 0;
     }
 }

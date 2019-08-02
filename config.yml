@@ -18,6 +18,8 @@ UNCSS_OPTIONS:
 
 # Gulp will reference these paths when it copies files
 PATHS:
+  # Path to print-responsively files folder
+  print_responsively: "print_responsively"
   # Path to dist folder
   dist: "dist"
   # Paths to static assets that aren't images, CSS, or JavaScript
