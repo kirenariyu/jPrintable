@@ -1,0 +1,255 @@
+<div class="contain-to-grid title">
+	<div class="grid-container">
+		<span>Print Responsively</span>
+	</div>
+</div>
+
+<div class="contain-to-grid body-con index-con">
+	<div class="grid-container">
+		<div class="alert grid-x grid-x-container">
+			<div class="cell medium-2 align-center-middle text-center show-for-medium">
+				<i class="fi-alert"></i>
+			</div>
+			<div class="cell small-12 medium-10">
+				<p>Please take note that you don't need jQuery, Foundation and LESS or DataTables to use this plugin. I only used them here for the design. The design of your web's all yours. You'll be only needing are the following:</p>
+				<ol type="1">
+					<li><strong>print-responsively.css</strong> for @media print</li>
+					<li><strong>print-responsively.js</strong> for config</li>
+				</ol>
+				<p>The cons for this plugin is you need to place the size of the paper and will only be responsive for that size of the paper.</p>
+			</div>
+		</div>
+		<div class="grid-x grid-margin-x">
+			<div class="cell medium-3 columns show-for-medium">
+				<nav id="right-con" data-sticky-container>
+					<div class="sticky" data-sticky data-anchor="left-con" data-margin-top="3">
+						<ul class="vertical menu" data-magellan data-offset="65">
+							<li><a href="#introduction">Introduction</a></li>
+							<li><a href="#getting-started">Getting Started</a></li>
+							<li><a href="#cheat-sheet-css">Cheat Sheet (CSS)</a></li>
+							<li><a href="#cheat-sheet-config">Cheat Sheet (Config)</a></li>
+							<li><a href="#styling">Styling in @media print</a></li>
+							<li><a href="#config">Configurations</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div id="left-con" class="cell medium-9 small-12 columns">
+				<section id="introduction" data-magellan-target="introduction">
+					<h2>Introduction</h2>
+					<p>Print Responsively aims to render webpage into a specific paper simply, properly and responsively in every browser; eliminating the default footer and header of user's web browser.</p>
+					<p>Before, there were rules in CSS that we can use for @media print so we could print our desired webpages properly. But, unfortunately, some of them were already deprecated. So I made this plugin to help others give idea or use it (that would be an honor) for their website or web application.</p>
+				</section>
+				<section id="getting-started" data-magellan-target="getting-started">
+					<h2>Getting Started</h2>
+					<p>Print Responsively is made purely in JavaScript.</p>
+					<p>I created a simple website in this repository to give you some examples on how this plugin works. But you will be only needing these files to add in your document's head:</p>
+					<ul>
+						<li>css/print-responsively.css</li>
+						<li>js/print-responsively.js</li>
+					</ul>
+					<p>Then add this code to your code:</p>
+					<p><code>$(document).printResponsively();</code></p>
+					<p>Or if there's only a specific content in your document that you want it printed:</p>
+					<p><code>$('#container').printResponsively();</code></p>
+				</section>
+				<section id="cheat-sheet-css" data-magellan-target="cheat-sheet-css">
+					<h2>Cheat Sheet (CSS)</h2>
+					<p>You may add additional rules depending on the set design. Just take note that sometimes float elements can destroy your design.</p>
+					<p>If you encountered some display problem, you also need to look carefully the parent element/s because they can affect the look of your page on print and this can really waste a lot of your time. Your partner-in-crime is inspect console in browsers and try experimenting in styles.</p>
+					<table class="dt-simple dt-responsive" width="100%">
+						<thead>
+							<tr>
+								<th>Class</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><code>.hide-print</code></td>
+								<td>This will not include the element in print.</td>
+							</tr>
+							<tr>
+								<td><code>.show-print</code></td>
+								<td>Hidden or not, this will include the element in print.</td>
+							</tr>
+							<tr>
+								<td><code>.pfh-con</code></td>
+								<td>Put this in the parent of the header; where the parent will also cover the content.</td>
+							</tr>
+							<tr>
+								<td><code>.pff-con</code></td>
+								<td>Placed in the container of</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section id="cheat-sheet-config" data-magellan-target="cheat-sheet-config">
+					<h2>Cheat Sheet (Config)</h2>
+					<table class="dt-simple dt-responsive" width="100%">
+						<thead>
+							<tr>
+								<th>Option</th>
+								<th>Value</th>
+								<th>Description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>buttonClass</td>
+								<td>Button elements' classname/s.</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>buttonContainer</td>
+								<td>Container element's id or classname if multiple.</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>buttonText</td>
+								<td>Text or value of print button.</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>container</td>
+								<td>Element's id or classname if multiple content to be shown in print.</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>cssContainer</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>cssPath</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>footer</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>header</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>keypress</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>margin</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>orientation</td>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>size</td>
+								<td></td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section id="styling" data-magellan-target="styling">
+					<h2>Styling in @media print</h2>
+					<p>All margin and padding from the body or the selected container will reflect in the print. There are some instances that @media print is so painful to work on for not all styles can be read by browser's print or page setup.</p>
+					<p>You may search from Google or ask for help in StackOverflow regarding some issues of your media print. But some of them have been asked and answered</p>
+				</section>
+				<section id="config" data-magellan-target="config">
+					<h2>Configurations</h2>
+					
+					<div class="config-section">
+						<h3 id="buttonClass">buttonClass</h3>
+						<p>Add other class. The first class is 'print-button'.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="buttonContainer">buttonContainer</h3>
+						<p>Default: None</p>
+						<p>Add the id container where you'll put the button/s.</p>
+						<p>Add the class containers where you'll put the button/s.</p>
+						<p>Optional. If there's no buttonContainer, then no buttons.</p>
+						<p>If you need to put each buttons to different location, use cloning for now. Will update to add this function.</p>
+						</div>
+
+					<div class="config-section">
+						<h3 id="buttonText">buttonText</h3>
+						<p>Default if there's a buttonContainer: Print</p>
+						<p>If there are multiple sizes, there would be multiple buttons.</p>
+						<p>Prerequisite: buttonContainer</p>
+						<p>If you like to add size in button you can add by &lt;size&gt;.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="container">container</h3>
+						<p>Default: 'body'</p>
+						<p>Add the id containers of the content you want only to print.</p>
+						<p>Add the class containers of the contents you want only to print.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="cssContainer">cssContainer</h3>
+						<p>If there's a css path, the default would be in the body. Else, this will fail.</p>
+						<p>Prerequisite: cssPath</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="cssPath">cssPath</h3>
+						<p>You can dynamically add the style.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="footer">footer</h3>
+						<p>Add id.</p>
+						<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
+						<p>Contents should be layered with the footer.</p>
+						<p>Content should be inside footer's parent.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="header">header</h3>
+						<p>Add id.</p>
+						<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
+						<p>Contents should be layered with the header.</p>
+						<p>Content should be inside header's parent.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="keypress">keypress</h3>
+						<p>Default: true</p>
+						<p>Boolean</p>
+						<p>Enable to print desired layout via Ctrl+P.</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="margin">margin</h3>
+						<p>Default: 0</p>
+						<p>You'll decide the format if it's in mm, in or px.</p>
+						<p>Add margin in any format. Use shorthand margin.</p>
+						<p>top right bottom left</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="orientation">orientation</h3>
+						<p>Default: portrait</p>
+					</div>
+
+					<div class="config-section">
+						<h3 id="size">size</h3>
+						<p>Default: Letter</p>
+						<p>If there are no sizes in the list, you may add it in mm.</p>
+						<p>If multiple, ','</p>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</div>

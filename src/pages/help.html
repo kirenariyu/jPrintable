@@ -1,0 +1,61 @@
+<div class="contain-to-grid body-con help-con">
+	<div class="grid-container">
+		<div class="grid-x grid-x-container">
+			<div class="large-offset-3 medium-offset-2 large-6 medium-8 small-12 text-center">
+				<h2><i class="fi-mail"></i> Send Help</h2>
+				<div class="grid-container">
+					<div class="grid-x grid-padding-x">
+						<form id="email-form" class="text-left" name="email-form" method="" action="">
+							<div class="small-12 cell">
+								<label>Name / Nickname</label>
+								<input id="name" name="name" type="text" placeholder="John Doe" required>
+							</div>
+							<div class="small-12 cell">
+								<label>Email</label>
+								<input id="email" name="email" type="email" placeholder="example@email.com" required>
+							</div>
+							<div class="small-12 cell">
+								<label>Subject</label>
+								<select id="subject" name="subject">
+									<option value="bug">Bug / Issue</option>
+									<option value="question">Question</option>
+									<option value="m2m">Many to Mention</option>
+									<option value="other">Other</option>
+									<option value="other">Suggestion</option>
+								</select>
+								<input id="subject-msg" name="subject-msg" type="text" placeholder="Any issues, bugs, questions and message">
+							</div>
+							<!--<div class="cell small-5 align-self-middle">
+								<label>Attach a Photo</label>
+							</div>
+							<div class="cell small-7">
+								<label for="file-upload" class="button"><i class="fi-upload"></i>&nbsp; Upload Photo</label>
+								<input type="file" id="file-upload" class="show-for-sr" accept="image/x-png,image/gif,image/jpeg">
+							</div> -->
+							<div class="cell small-12">
+								<label>Message</label>
+								<textarea id="body-msg" name="body-msg" placeholder="Uhm..." required></textarea>
+							</div>
+							<div class="cell small-12">
+								<button id="send-love" type="button" class="button">SEND</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="loading" class="reveal text-center" data-reveal>
+	<div class="loader"></div>
+</div>
+
+<div id="love-status" class="reveal small" data-reveal>
+	<p class="lead">Thank You!</p>
+	<p>Your message has been sent! Please allow a few hours for me to respond to your email.</p>
+	<p>Today's time in my country, Philippines, is <span id="time"></span></span>.</p>
+	<button class="close-button" data-close aria-label="Close modal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+</div>

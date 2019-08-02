@@ -1,5 +1,5 @@
 # Print Responsively
 
-This is an example of a simple payslip where you can print the content responsively.
+Print Responsively is a JavaScript plugin and it's under construction.
 
-But if the paper has a fixed header for each page, you must place a specific paper size
+This should address the header and footer issue by removing the default header and footer of browsers and automatically creating a header and footer for you.
