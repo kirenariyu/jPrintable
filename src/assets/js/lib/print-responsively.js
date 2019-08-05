@@ -144,7 +144,6 @@ _setCss = function (cssContainer, cssPath) {
         link.className  = 'dynamic-stylesheet-1'
         link.rel        = 'stylesheet';
         link.type       = 'text/css';
-        cssContainer    = (cssContainer) ? cssContainer : 'head';
 
     if (cssContainer.charAt(0) == '#') {
         document.querySelector(cssContainer).appendChild(link);
@@ -175,7 +174,7 @@ _printResponsively = function (param) {
         buttonText      = (param.buttonText) ? param.buttonText : '',
         container       = (param.container) ? param.container : 'body',
         cssPath         = (param.cssPath) ? param.cssPath : '',
-        cssContainer    = (param.cssContainer) ? param.cssContainer : '',
+        cssContainer    = (param.cssContainer) ? param.cssContainer : 'head',
         footer          = (param.footer) ? param.footer : '',
         header          = (param.header) ? param.header : true,
         keypress        = (param.keypress) ? param.keypress : '',
