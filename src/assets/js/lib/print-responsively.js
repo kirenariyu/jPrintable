@@ -183,7 +183,7 @@ _printResponsively = function (param) {
         size            = (param.size) ? param.size : 'letter';
 
     // Add button and set _printPage function on each
-    if (!buttonContainer && buttonText) {
+    if (!buttonContain && buttonText) {
         console.log('You must add the id or class of button container/s.');
     } else if (buttonContainer) {
         _setButton(buttonClass, buttonContainer, buttonText, container, margin, orientation, size);

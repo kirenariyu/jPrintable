@@ -25,6 +25,10 @@ printResponsively({
 });
 ```
 
+### Usage
+
+* [Usage Documentation](https://github.com/yumicchi/Print-Responsively/blob/master/USAGE.md)
+
 ## Run Sample Website
 
 This repository contains a sample website to give demo to user who will use the Print Responsively plugin. Other files, used framework and plugins in the demo are not supposed to be requirements or prerequisites for Print Responsvely plugin to run.
@@ -42,11 +46,11 @@ You're free to email me at yumitakuma@outlook.com.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md]() for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/yumicchi/Print-Responsively/blob/master/CONTRUBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Versioning
 
-Please read [CHANGELOG.md]() for versioning.
+Please read [CHANGELOG.md](https://github.com/yumicchi/Print-Responsively/blob/master/CHANGELOG.md) for versioning.
 
 ## Authors
 
@@ -54,4 +58,4 @@ Please read [CHANGELOG.md]() for versioning.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/yumicchi/Print-Responsively/blob/master/LICENSE.md) file for details.
