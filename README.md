@@ -46,7 +46,7 @@ You're free to email me at yumitakuma@outlook.com.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/yumicchi/Print-Responsively/blob/master/CONTRUBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/yumicchi/Print-Responsively/blob/master/CONTRUBUTING.md) for details on code of conduct, and the process for submitting pull requests.
 
 ## Versioning
 
@@ -58,4 +58,8 @@ Please read [CHANGELOG.md](https://github.com/yumicchi/Print-Responsively/blob/m
 
 ## License
 
+<<<<<<< HEAD
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/yumicchi/Print-Responsively/blob/master/LICENSE.md) file for details.
+=======
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+>>>>>>> refs/remotes/origin/master
