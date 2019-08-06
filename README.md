@@ -54,11 +54,9 @@ Please read [CHANGELOG.md](https://github.com/yumicchi/Print-Responsively/blob/m
 
 ## Authors
 
-* **Yumi Takuma** - *Initial work* - [yumicchi](https://github.com/yumicchi)
+* **Yumi Takuma** - [yumicchi](https://github.com/yumicchi)
 
-## License
-
-MIT License
+## MIT License
 
 Copyright (c) 2019 Yumi Takuma
 
