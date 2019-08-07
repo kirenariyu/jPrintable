@@ -14,7 +14,16 @@ a {
     transition: 0.3s;
 }
 code {
-    font-size: 0.8em;
+    font-size: 0.85em !important;
+}
+kbd {
+    background-color: $white !important;
+    border: 1px solid $gray;
+    border-radius: 6px;
+    box-shadow: 0 2px 1px 0 $gray;
+    font-size: 0.8em !important;
+    padding: 3px 5px !important;
+    margin: 0 3px !important;
 }
 ol, ul {
     margin: 0 0 1rem 2.5em;
@@ -138,6 +147,11 @@ html {
                             border-radius: 10px;
                             margin: 1.5em 2em;
                             padding: 1.3em 2em;
+                            .codeblock {
+                                background-color: #E6E6E6;
+                                font-size: 0.85em;
+                                padding: 1em 1.5em 1.4em;
+                            }
                         }
                     }
                 }

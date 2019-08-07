@@ -60,26 +60,31 @@
 					<table class="dt-simple dt-responsive" width="100%">
 						<thead>
 							<tr>
-								<th>Class</th>
+								<th width="20%">Class</th>
 								<th>Description</th>
+								<th width="15%">Prerequisite</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td><code>.hide-print</code></td>
-								<td>This will not include the element in print.</td>
+								<td>This will hide the visible element on print.</td>
+								<td></td>
 							</tr>
 							<tr>
 								<td><code>.show-print</code></td>
-								<td>Hidden or not, this will include the element in print.</td>
+								<td>This will show the hidden element on print.</td>
+								<td></td>
 							</tr>
 							<tr>
-								<td><code>.pfh-con</code></td>
-								<td>Put this in the parent of the header; where the parent will also cover the content.</td>
+								<td><code>.header-area</code></td>
+								<td>Place this class in the parent container of the header where its associated contents are also included. You may combine this class with <code>.footer-area</code> class if there's also a footer incorporated.</td>
+								<td><code>header</code></td>
 							</tr>
 							<tr>
-								<td><code>.pff-con</code></td>
-								<td>Placed in the container of</td>
+								<td><code>.footer-area</code></td>
+								<td>Place this class in the parent container of the footer where its associated contents are also included. You may combine this class with <code>.header-area</code> class if there's also a header incorporated.</td>
+								<td><code>footer</code></td>
 							</tr>
 						</tbody>
 					</table>
@@ -90,70 +95,70 @@
 						<thead>
 							<tr>
 								<th>Option</th>
-								<th>Value</th>
 								<th>Description</th>
+								<th>Default</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>buttonClass</td>
-								<td>Button elements' classname/s.</td>
-								<td></td>
+								<td><code>buttonClass</code></td>
+								<td>Allows you to add more classnames to the print button. For multiple class, add space as delimiter just like inputting classes in HTML.</td>
+								<td><code>null</code></td>
 							</tr>
 							<tr>
-								<td>buttonContainer</td>
-								<td>Container element's id or classname if multiple.</td>
-								<td></td>
+								<td><code>buttonContainer</code></td>
+								<td>A required option if you wanted to place a print button. Pass it with node name, id (<code>#id</code>) of the element or class (<code>.class</code>) of the element/s if you like to put the print button in multiple places of your page.</td>
+								<td><code>null</code></td>
 							</tr>
 							<tr>
-								<td>buttonText</td>
-								<td>Text or value of print button.</td>
-								<td></td>
+								<td><code>buttonText</code></td>
+								<td>Allows you to change the default text of the print button. You may also add the size name by adding <code>&lt;size&gt;</code> in the string. This option is recommended if you have multiple page sizes.</td>
+								<td><code>'Print'</code></td>
 							</tr>
 							<tr>
-								<td>container</td>
-								<td>Element's id or classname if multiple content to be shown in print.</td>
-								<td></td>
+								<td><code>container</code></td>
+								<td>Assigns a container element to be the only content to be shown on print. For multiple containers, add comma as delimiter. Please be sure to include selector.</td>
+								<td><code>'body'</code></td>
 							</tr>
 							<tr>
-								<td>cssContainer</td>
-								<td></td>
-								<td></td>
+								<td><code>cssContainer</code></td>
+								<td>Specifies the container where the dynamically added css file will be placed. The default would be in the first head of the document. If there's no <code>cssPath</code> but you placed this option, it will occur an error.</td>
+								<td><code>'head'</code></td>
 							</tr>
 							<tr>
-								<td>cssPath</td>
-								<td></td>
-								<td></td>
+								<td><code>cssPath</code></td>
+								<td>This is used for dynamically adding of the css file of Print Responsively by passing its file or url path.</td>
+								<td><code>null</code></td>
 							</tr>
 							<tr>
-								<td>footer</td>
-								<td></td>
-								<td></td>
+								<td><code>footer</code></td>
+								<td>Assigns a container element to be the footer of the page on print. There should be one for each <code>.footer-area</code>.</td>
+								<td><code>null</code></td>
 							</tr>
 							<tr>
-								<td>header</td>
-								<td></td>
-								<td></td>
+								<td><code>header</code></td>
+								<td>Assigns a container element to be the header of the page on print. There should be one for each <code>.header-area</code>.</td>
+								<td><code>null</code></td>
 							</tr>
 							<tr>
-								<td>keypress</td>
-								<td></td>
-								<td></td>
+								<td><code>keypress</code></td>
+								<td>If true, it will allow you to print using <kbd>ctrl</kbd> and <kbd>P</kbd> with the configured layout.</td>
+								<td><code>false</code></td>
 							</tr>
 							<tr>
-								<td>margin</td>
-								<td></td>
-								<td></td>
+								<td><code>margin</code></td>
+								<td>Specifies the margin for all pages. Pass margin the same way in css. There are still no function where you can change margin on multiple pages.</td>
+								<td><code>'0'</code></td>
 							</tr>
 							<tr>
-								<td>orientation</td>
-								<td></td>
-								<td></td>
+								<td><code>orientation</code></td>
+								<td>Allows you to change the layout of the pages. There are only two choices for this option: portrait and landscape.</td>
+								<td><code>'portrait'</code></td>
 							</tr>
 							<tr>
-								<td>size</td>
-								<td></td>
-								<td></td>
+								<td><code>size</code></td>
+								<td>Allows you to change the paper size and add more wih delimiter comma. If the desired size is not in the list, you may add manual size e.g. <code>&lt;120cmX130cm&gt;</code> in widthXheight format. The measurements should be in lowercase and the delimiter 'X' should be in uppercase.</td>
+								<td><code>'letter'</code></td>
 							</tr>
 						</tbody>
 					</table>
@@ -168,7 +173,13 @@
 					
 					<div class="config-section">
 						<h3 id="buttonClass">buttonClass</h3>
-						<p>Add other class. The first class is 'print-button'.</p>
+						<p>Allows you to add more classnames to the print button. For multiple class, add space as delimiter just like inputting classes in HTML.</p>
+						<p>Each buttons' first classname is <code>.print-button</code>. If you want to add default style to print button, you may call <code>.print-button</code> into your css file.</p>
+						<div class="codeblock">
+							printResponsively({
+								buttonClass: '';
+							});
+						</div>
 					</div>
 
 					<div class="config-section">

@@ -53,21 +53,21 @@ $(function() {
 	</tr>
     <tr>
         <td><code>buttonClass</code></td>
-        <td>Allows the user to add more classnames to the print button. For multiple class, add space as delimiter just like inputting classes in HTML.</td>
+        <td>Allows you to add more classnames to the print button. For multiple class, add space as delimiter just like inputting classes in HTML.</td>
         <td><code>buttonContainer</code></td>
         <td><code>string</code></td>
         <td><code>null</code></td>
     </tr>
     <tr>
         <td><code>buttonContainer</code></td>
-        <td>A required option if the user wanted to place a print button. Pass it with node name, id (<code>#id</code>) of the element or class (<code>.class</code>) of the element/s if you like to put the print button in multiple places of your page.</td>
+        <td>A required option if you wanted to place a print button. Pass it with node name, id (<code>#id</code>) of the element or class (<code>.class</code>) of the element/s if you like to put the print button in multiple places of your page.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>null</code></td>
     </tr>
     <tr>
         <td><code>buttonText</code></td>
-        <td>Allows the user to change the default text of the print button. You may also add the size name by adding <code>&lt;size&gt;</code> in the string. This option is recommended if you have multiple page sizes.</td>
+        <td>Allows you to change the default text of the print button. You may also add the size name by adding <code>&lt;size&gt;</code> in the string. This option is recommended if you have multiple page sizes.</td>
         <td><code>buttonContainer</code></td>
         <td><code>string</code></td>
         <td><code>'Print'</code></td>
@@ -81,10 +81,10 @@ $(function() {
     </tr>
     <tr>
         <td><code>cssContainer</code></td>
-        <td>Specifies the container where the dynamically added css file will be placed. The default would be in the first <code>head</code> of the document. If there's no <code>cssPath</code> but the user placed this option, it will occur an error.</td>
+        <td>Specifies the container where the dynamically added css file will be placed. The default would be in the first-of-type <code>head</code> of the document. If there's no <code>cssPath</code> but you placed this option, it will occur an error.</td>
         <td><code>cssPath</code></td>
         <td><code>string</code></td>
-        <td><code>'head:first-of-type'</code></td>
+        <td><code>'head'</code></td>
     </tr>
     <tr>
         <td><code>cssPath</code></td>
@@ -109,28 +109,28 @@ $(function() {
     </tr>
     <tr>
         <td><code>keypress</code></td>
-        <td>If true, it will allow the user to print using <kbd>ctrl</kbd> and <kbd>P</kbd> with the configured layout.</td>
+        <td>If true, it will allow you to print using <kbd>ctrl</kbd> and <kbd>P</kbd> with the configured layout.</td>
         <td></td>
         <td><code>boolean</code></td>
         <td><code>false</code></td>
     </tr>
     <tr>
         <td><code>margin</code></td>
-        <td>Specifies the margin for all pages. Pass margin the same way in css. There are still no function where the user can change margin on multiple pages.</td>
+        <td>Specifies the margin for all pages. Pass margin the same way in css. There are still no function where you can change margin on multiple pages.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>'0'</code></td>
     </tr>
     <tr>
         <td><code>orientation</code></td>
-        <td>Allows the user to change the layout of the pages. There are only two choices for this option: portrait and landscape.</td>
+        <td>Allows you to change the layout of the pages. There are only two choices for this option: portrait and landscape.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>'portrait'</code></td>
     </tr>
     <tr>
         <td><code>size</code></td>
-        <td>Allows the user to change the paper size and add more wih delimiter comma. If the desired size is not in the list, you may add manual size e.g. <code>&lt;120cmX130cm&gt;</code> in widthXheight format. The measurements should be in lowercase and the delimiter 'X' should be in uppercase.</td>
+        <td>Allows you to change the paper size and add more wih delimiter comma. If the desired size is not in the list, you may add manual size e.g. <code>&lt;120cmX130cm&gt;</code> in widthXheight format. The measurements should be in lowercase and the delimiter 'X' should be in uppercase.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>'letter'</code></td>
