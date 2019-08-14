@@ -130,7 +130,7 @@ $(function() {
     </tr>
     <tr>
         <td><code>size</code></td>
-        <td>Allows you to change the paper size and add more wih delimiter comma. If the desired size is not in the list, you may add manual size e.g. <code>&lt;120cmX130cm&gt;</code> in widthXheight format. The measurements should be in lowercase and the delimiter 'X' should be in uppercase.</td>
+        <td>Allows you to change the paper size and add more wih delimiter comma. If the desired size is not in the list, you may add manual size e.g. <code>120cmX130cm</code> in widthXheight format. The measurements should be in lowercase and the delimiter 'X' should be in uppercase.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>'letter'</code></td>

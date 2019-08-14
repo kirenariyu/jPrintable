@@ -60,10 +60,10 @@ $(document).ready(function() {
   $('#send-love').click(function() {
     if ($('#email-form').valid()) {
       $('#loading').foundation('open');
+      $('html.is-reveal-open').css('position', 'static');
       Email.send({
         Host : 'smtp.elasticemail.com',
         Username : 'yumitakuma@outlook.com',
-        Password : '833ba632-d222-4b1d-b75b-451fe271519a',
         To : 'yumitakuma@outlook.com',
         From : $('#email').val(),
         Subject : $('#subject').val() + ' | ' + $('#subject-msg').val(),
@@ -73,6 +73,7 @@ $(document).ready(function() {
         $('#name, #email, #subject, #subject-msg, #body-msg').val('');
         $('#time').html(new Date(new Date().toLocaleString("en-US", {timeZone: "Asia/Manila"})).toLocaleTimeString());
         $('#love-status').foundation('open');
+        $('html.is-reveal-open').css('position', 'static');
       });
     }
   });
@@ -99,11 +100,5 @@ $(document).ready(function() {
       help.find('#help-button').removeClass('hide');
       help.find('#help-text').addClass('hide');
     }
-  });
-
-  $('.codeblock').each(function() {
-    var str = $(this).html();
-    str.replaceAll('{', 'x');
-    $(this).html(str);
   });
 });

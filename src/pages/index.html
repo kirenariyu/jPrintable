@@ -49,9 +49,7 @@
 						<li>js/print-responsively.js</li>
 					</ul>
 					<p>Then add this code to your code:</p>
-					<p><code>$(document).printResponsively();</code></p>
-					<p>Or if there's only a specific content in your document that you want it printed:</p>
-					<p><code>$('#container').printResponsively();</code></p>
+					<p><code>$(document).printResponsively(<i>options</i>);</code></p>
 				</section>
 				<section id="cheat-sheet-css" data-magellan-target="cheat-sheet-css">
 					<h2>Cheat Sheet (CSS)</h2>
@@ -107,7 +105,7 @@
 							</tr>
 							<tr>
 								<td><code>buttonContainer</code></td>
-								<td>A required option if you wanted to place a print button. Pass it with node name, id (<code>#id</code>) of the element or class (<code>.class</code>) of the element/s if you like to put the print button in multiple places of your page.</td>
+								<td>A required option if you want to place a print button in your page. Pass it with node name or id (<code>#id</code>) of the element or class (<code>.class</code>) of the element/s if you like to put the print button in multiple places of your page.</td>
 								<td><code>null</code></td>
 							</tr>
 							<tr>
@@ -174,90 +172,163 @@
 					<div class="config-section">
 						<h3 id="buttonClass">buttonClass</h3>
 						<p>Allows you to add more classnames to the print button. For multiple class, add space as delimiter just like inputting classes in HTML.</p>
-						<p>Each buttons' first classname is <code>.print-button</code>. If you want to add default style to print button, you may call <code>.print-button</code> into your css file.</p>
-						<div class="codeblock">
-							printResponsively({
-								buttonClass: '';
-							});
-						</div>
+						<p>Each buttons' first classname is <code>.print-button</code>. If you want to add default style to print button, you may call <code>.print-button</code> to your css file.</p>
+						<p>Please take note that the <code>buttonContainer</code> option is required to turn on the automatically created print buttons.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    buttonContainer: '#buttonContainer',
+    buttonClass: 'class-1 class-2'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="buttonContainer">buttonContainer</h3>
-						<p>Default: None</p>
-						<p>Add the id container where you'll put the button/s.</p>
-						<p>Add the class containers where you'll put the button/s.</p>
-						<p>Optional. If there's no buttonContainer, then no buttons.</p>
-						<p>If you need to put each buttons to different location, use cloning for now. Will update to add this function.</p>
-						</div>
+						<p>This option automatically adds print button in a specific container. Just call the id or classname of the desired container.</p>
+						<p>If there's no buttonContainer configured in Print Responsively, then there'll be no print button in the page. Otherwise, you may always turn on the <code>keypress</code> to enable <kbd>Ctrl</kbd> + <kbd>P</kbd> shortcut key to print with your configured Print Responsively layout.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    buttonContainer: '.buttonContainers-1, .buttonContainers-2, #sub-buttonContainer'
+});
+</pre>
+</div>				
+					</div>
 
 					<div class="config-section">
 						<h3 id="buttonText">buttonText</h3>
-						<p>Default if there's a buttonContainer: Print</p>
-						<p>If there are multiple sizes, there would be multiple buttons.</p>
-						<p>Prerequisite: buttonContainer</p>
-						<p>If you like to add size in button you can add by &lt;size&gt;.</p>
+						<p>This allows you to change the default text which is 'Print' in print button.</p>
+						<p>If there are multiple sizes, there would be multiple buttons so I would recommend to add &lt;size&gt; for it will be replaced with the paper size of each specific print button.</p>
+						<p>Please take note that the <code>buttonContainer</code> option is required to turn on the automatically created print buttons.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    buttonContainer: '#buttonContainer',
+    buttonText: 'Print Me (&lt;size&gt;)'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="container">container</h3>
-						<p>Default: 'body'</p>
-						<p>Add the id containers of the content you want only to print.</p>
-						<p>Add the class containers of the contents you want only to print.</p>
+						<p>This allows you to specify contents to be shown in page print.</p>
+						<p>Instead of using the class <code>.show-print</code> when there's only one content to be shown, I recommend to use this option and add the id or classname of the element as value.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    container: '.containers-1, .containers-2, #someSpecificContainer'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="cssContainer">cssContainer</h3>
-						<p>If there's a css path, the default would be in the body. Else, this will fail.</p>
-						<p>Prerequisite: cssPath</p>
+						<p>This option allows you to add the css file of Print Responsively in a specific element or elements. Otherwise, its default value is in the (first, if multiple) <code>head</code> element.</p>
+						<p>To be able to use this option, <code>cssPath</code> must also be called.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    cssContainer: '.i-want-to-put-it-on-a-div'
+    cssPath: '//url-path-to-the-print-responsively-css-file'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="cssPath">cssPath</h3>
-						<p>You can dynamically add the style.</p>
+						<p>This allows you to dynamically add the css file.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    cssPath: '//url-path-to-the-print-responsively-css-file'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="footer">footer</h3>
-						<p>Add id.</p>
-						<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
-						<p>Contents should be layered with the footer.</p>
-						<p>Content should be inside footer's parent.</p>
+						<p>This lets you add footer in page setup. Just return the id of the element or classname as long as its the only element with classname in the page.</p>
+						<p>Don't forget to add class <code>.footer-area</code> in footer's parent.</p>
+						<p>The contents of the footer should be also inside footer's parent.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    footer: '#footer'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="header">header</h3>
-						<p>Add id.</p>
-						<p>Add classname but that element should be the only one in the page who has the classname or it'll not work.</p>
-						<p>Contents should be layered with the header.</p>
-						<p>Content should be inside header's parent.</p>
+						<p>This lets you add header in page setup. Just return the id of the element or classname as long as its the only element with classname in the page.</p>
+						<p>Don't forget to add class <code>.header-area</code> in header's parent.</p>
+						<p>The contents of the header should be also inside header's parent.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    header: '#header'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="keypress">keypress</h3>
-						<p>Default: true</p>
-						<p>Boolean</p>
-						<p>Enable to print desired layout via Ctrl+P.</p>
+						<p>The fefault value for this option is <code>false</code>. If true, this enables the shortcut key <kbd>Ctrl</kbd> + <kbd>P</kbd> to print with the configured layout in Print Responsively.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    keypress: true
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="margin">margin</h3>
-						<p>Default: 0</p>
-						<p>You'll decide the format if it's in mm, in or px.</p>
-						<p>Add margin in any format. Use shorthand margin.</p>
-						<p>top right bottom left</p>
+						<p>To be able to add margin each page, use this option and set value of the desired margin. Else, the default value is 0.</p>
+						<p>The value for the margin has the same accepted format and value in css.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    margin: '20px 15px'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="orientation">orientation</h3>
-						<p>Default: portrait</p>
+						<p>This allows you to change the orientation of your page to landscape or portrait.</p>
+						<p>The default value is portrait.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    orientation: 'landscape'
+});
+</pre>
+</div>
 					</div>
 
 					<div class="config-section">
 						<h3 id="size">size</h3>
-						<p>Default: Letter</p>
-						<p>If there are no sizes in the list, you may add it in mm.</p>
-						<p>If multiple, ','</p>
+						<p>This allows you to change the default paper size of your page. You may add multiple sizes with comma (,) delimiter but it will also add multiple print button.</p>
+						<p>If there are no sizes in the list, you may add it in widthXheight, delimiting with capital X, e.g. 120mmX210mm.</p>
+						<p>The default value is letter size.</p>
+<div class="codeblock">
+<pre>
+printResponsively({
+    size: 'A4'
+});
+</pre>
+</div>
 					</div>
 				</section>
 			</div>

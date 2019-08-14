@@ -29,7 +29,7 @@ printResponsively({
 
 * [Usage Documentation](https://github.com/yumicchi/Print-Responsively/blob/master/USAGE.md)
 
-## Run Sample Website
+## Running the Sample Website
 
 This repository contains a sample website to give demo to user who will use the Print Responsively plugin. Other files, used framework and plugins in the demo are not supposed to be requirements or prerequisites for Print Responsvely plugin to run.
 
