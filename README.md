@@ -1,4 +1,4 @@
-# Print Responsively
+# Print Responsively (Unfinished)
 
 Print Responsively is a JavaScript plugin and it's under construction.
 
