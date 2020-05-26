@@ -1,5 +1,5 @@
 {
-  "name": "print-responsively",
+  "name": "jPrintable",
   "version": "1.0.0",
   "description": "jTrint is a jQuery plugin for printing documents of tables like payslip.",
   "main": "index.js",
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/takumayumirin/print-responsively.git"
+    "url": "git+https://github.com/takumayumirin/jPrintable.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/takumayumirin/print-responsively/issues"
+    "url": "https://github.com/takumayumirin/jPrintable/issues"
   },
-  "homepage": "https://github.com/takumayumirin/print-responsively#readme"
+  "homepage": "https://github.com/takumayumirin/jPrintable#readme"
 }

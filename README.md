@@ -1,10 +1,10 @@
-# jTrint
+# jPrintable
 
-jTrint is a jQuery plugin for printing documents of tables like payslip.
+jPrintable is a jQuery plugin for printing documents of tables like payslip.
 
 ## Getting Started
 
-* jtrint.js
+* jPrintable.js
 
 ### Prerequisites
 
@@ -13,7 +13,7 @@ jTrint is a jQuery plugin for printing documents of tables like payslip.
 ### Installing
 
 ```
-jTrint(options);
+jPrintable(options);
 ```
 
 ## Options
@@ -94,7 +94,7 @@ jTrint(options);
     </tr>
     <tr>
         <td><code>cssPath</code></td>
-        <td>This is used for dynamically adding of the css file of jTrintby passing its file or url path.</td>
+        <td>This is used for dynamically adding of the css file of jPrintableby passing its file or url path.</td>
         <td></td>
         <td><code>string</code></td>
         <td><code>null</code></td>
@@ -145,7 +145,7 @@ jTrint(options);
 
 ## Running the Sample Website
 
-This repository contains a sample website to give demo to user who will use the jTrint plugin. Other files, used framework and plugins in the demo are not required this plugin to run.
+This repository contains a sample website to give demo to user who will use the jPrintable plugin. Other files, used framework and plugins in the demo are not required this plugin to run.
 
 ## Issues, Feedbacks and Suggestions
 
@@ -153,7 +153,7 @@ You're free to email me at yumitakuma@outlook.com.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/takumayumirin/jTrint/blob/master/CONTRUBUTING.md) for details on code of conduct, and the process for submitting pull requests.
+Please read [CONTRIBUTING.md](https://github.com/takumayumirin/jPrintable/blob/master/CONTRUBUTING.md) for details on code of conduct, and the process for submitting pull requests.
 
 ## Versioning
 
