@@ -1,4 +1,4 @@
-# jPrintable
+# jPrintable (unfinished)
 
 jPrintable is a jQuery plugin for printing documents of tables like payslip.
 
